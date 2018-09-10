@@ -1,57 +1,7 @@
 # quickstart-rest-web-service
-
-## Spring Overview 
-Spring makes it easy to create Java enterprise applications with the flexibility to create many kinds of architectures depending on an application’s needs. As of Spring Framework 5.0, Spring requires JDK 8+ (Java SE 8+) and provides out-of-the-box support for JDK 9 already.
-
-Spring supports a wide range of application scenarios, for example:
-
--	In a large enterprise, applications often exist for a long time and have to run on a JDK and application server whose upgrade cycle is beyond developer control. 
--	Others may run as a single jar with the server embedded, possibly in a cloud environment. 
-- Yet others may be standalone applications (such as batch or integration workloads) that do not need a server.
-
-Several initiatives (aka projects) have sprung since its original inception. These notes focus on the foundation, that is the **Spring Framework** which is divided into modules. Applications can choose which modules they need. At the heart are the modules of the core container, including a configuration model and a dependency injection mechanism. Beyond that, the Spring Framework provides foundational support for different application architectures, including messaging, transactional data and persistence, and web. It also includes the Servlet-based Spring MVC web framework and, in parallel, the Spring WebFlux reactive web framework.
-![Spring Framework Runtime](images/spring_framework_runtime.png)
-
-
-For more information, see [Spring Framework Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#overview-spring). 
-
-### Design Principles
-The following are the guiding principles of the Spring Framework:
-
-1.	**Provide choice at every level**. **Spring lets you defer design decisions as late as possible**. For example, you can switch persistence providers through configuration without changing your code. The same is true for many other infrastructure concerns and integration with third-party APIs.
-2. **Accommodate diverse perspectives**. **Spring embraces flexibility **and is not opinionated about how things should be done. It supports a wide range of application needs with different perspectives.
-3. **Maintain strong backward compatibility**. Spring’s evolution has been carefully managed to force few breaking changes between versions. Spring supports a carefully chosen range of JDK versions and third-party libraries to facilitate maintenance of applications and libraries that depend on Spring.
-4. **Care about API design**. The Spring team puts a lot of thought and time into making **APIs that are intuitive and that hold up across many versions and many years**.
-5. **Set high standards for code quality**. The **Spring Framework puts a strong emphasis on meaningful, current, and accurate Javadoc**. It is one of very few projects that can claim clean code structure with no circular dependencies between packages.
-
-
-## Prerequisites
-
--  It is reccomended to use a tried and true **good IDE** environment. We suggest the following:
-	- [Eclipse](http://wwww.eclipse.org/). Install the Spring IDE plugin as shown at [Spring Tools for Eclipse](https://www.eclipse.org/community/eclipse_newsletter/2018/february/springboot.php). 
-	![Install Spring IDE plugin](images/spring_ide_plugin.png)
-- **Other**
-	- aaa. 
-	- bbb.  
-
-
-
-# Getting Started
-If you are just getting started with Spring, you may want to begin using the Spring Framework by creating a Spring Boot-based application. Spring Boot provides a quick (and opinionated) way to create a production-ready Spring-based application. It is based on the Spring Framework, favors convention over configuration, and is designed to get you up and running as quickly as possible.
-
-You can do one of the following:
-
--	Generate a basic project using [start.spring.io](https://start.spring.io/).   
-- 	Follow one of the [Getting Started](https://spring.io/guides) guides, such as [Getting Started Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/). As well as being easier to digest, these guides are very task focused, and most of them are based on Spring Boot. They also cover other projects from the Spring portfolio that you might want to consider when solving a particular problem.
-
-
-## Projects
-The following collection of projects demonstrates how to use and apply Spring Framework in actual projects. We are going to use Eclispe IDE with Spring Framework plugin installed. 
-
-### RESTful Web Service
 This project shows how to create a [RESTful Web Service](https://spring.io/understanding/REST). You can download the exanmples source code at [sprinf-guides/gs-rest-service](https://github.com/spring-guides/gs-rest-service).  
 
-#### Overview
+## Overview
 The Web service accepts **GET requests** at:
 
 	http://localhost:8080/greeting
@@ -68,12 +18,12 @@ The name parameter value overrides the default value of "World" and is reflected
 
 	{"id":1,"content":"Hello, UserName!"}
 
-#### Prerequisites
+## Prerequisites
 1. Eclipse IDE.
 2. Assure that [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or later is installed.
 3. [Maven 3.2](https://maven.apache.org/download.cgi).   
 
-#### Steps
+## Steps
 1. Actiivate Eclipse IDE.
 2. From the menu bar select **File->New->Other-Maven** Project.
 3. In the pom UI enter information similar to the following:
