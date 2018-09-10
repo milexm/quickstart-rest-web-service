@@ -76,7 +76,7 @@ The name parameter value overrides the default value of "World" and is reflected
 1. Actiivate Eclipse IDE.
 2. From the menu bar select **File->New->Other-Maven** Project.
 3. In the pom UI enter information similar to the following:
-![Initial pom.xml](/Users/Michael/ADevelopment/Programming/Udemy/Spring/images/rest_web_service_pom.png)
+![Initial pom.xml](images/rest_web_service_pom.png)
 2. To the initial add the information shown next:
 
 		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
