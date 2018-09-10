@@ -99,11 +99,12 @@ The name parameter value overrides the default value of "World" and is reflected
 			"id": 1,
 			"content": "Hello, World!" 
 		}  
+
 Where:
 	- **id** is a unique identifier for the greeting.
 	- **content** is the greetign textual representation.
 
-	To **model the greeting representation**, you must **create a resource representation class**. Provide a plain old java object with fields, constructors, and accessors for the id and content data as shown next:
+To **model the greeting representation**, you must **create a resource representation class**. Provide a plain old java object with fields, constructors, and accessors for the id and content data as shown next:
 	
 		package com.acloudysky.springframework.quickstart_rest_web_service;
 		
@@ -125,9 +126,11 @@ Where:
 		        return content;
 		    }
 		}
+
+	
+4. **Resource Controller Class**.  In Spring’s when building RESTful web services, HTTP requests are handled by a controller. These components are easily identified by the **@RestController** annotation. You can see this in the **GreetingController** class below which handles GET requests for */greeting* by returning a new instance of the **Greeting** resource class.
+
 <div style="background-color:yellow">As you see in steps below, Spring uses the Jackson JSON library to automatically marshal instances of type Greeting into JSON.</div>
-4. **Resource Controller Class**.  In Spring’s when building RESTful web services, HTTP requests are handled by a controller. These components are easily identified by the **@RestController** annotation. You can see this in the **GreetingController** class below which handles GET requests for 
-*/greeting* by returning a new instance of the **Greeting** resource class.
 
 		package com.acloudysky.springframework.quickstart_rest_web_service;
 
@@ -150,20 +153,12 @@ Where:
 		}
 Let's analyze the GreetingController class which is deceptively simple but it implements very important Spring's concepts.
 
-
 -	The class uses Spring 4’s new **@RestController** annotation, which marks the class as a controller allowing every method to <span style="background-color:yellow">return a domain object</span> instead of a view. It’s shorthand for @Controller and @ResponseBody rolled together. In this example, it returns a resource representation class Greeting obiect. 
 <div style="background-color:#c2e7e7"> ![bullhorn](images/bullhorn.png) A key difference between a traditional MVC controller and the RESTful web service controller above is the way that the HTTP response body is created. Rather than relying on a view technology to perform server-side rendering of the greeting data to HTML, this RESTful web service controller simply populates and returns a Greeting object. The object data will be written directly to the HTTP response as JSON. The Greeting object is converted to JSON thanks to Spring’s HTTP message converter support; you don’t need to do this conversion manually. Because Jackson 2 is on the classpath, Spring’s MappingJackson2HttpMessageConverter is automatically chosen to convert the Greeting instance to JSON.</div>
 
 - 	The **@RequestMapping** annotation <span style="background-color:yellow">ensures that HTTP requests to /greeting are mapped to the greeting() method</span>. <div style="background-color:#c2e7e7"> ![bullhorn](images/bullhorn.png) The above example does not specify GET vs. PUT, POST, and so forth, because @RequestMapping maps all HTTP operations by default. If you want to narrow the mapping to GET only, use @RequestMapping(method=GET) instead.</div>
 -  The **@RequestParam** annotation binds the value of the query string parameter *name* into the name parameter of the greeting() method. If the *name* parameter is absent in the request, the defaultValue of "World" is used.
 -  Finally, the implementation of the method body creates and returns a new Greeting object with id and content attributes based on the next value from the counter, and formats the given name by using the greeting template.
-
-## Glossary
-
-- **Fluid Grid**. The fluid grid system uses percents instead of pixels for column widths. It has the same responsive capabilities as our fixed grid system, ensuring proper proportions for key screen resolutions and devices.- sada
-- **Parallax**. Parallax scrolling is a web site trend where the background content (i.e. an image) is moved at a different speed than the foreground content while scrolling. For more info, see [How TO - Parallax Scrolling](https://www.w3schools.com/howto/howto_css_parallax.asp). 
-- **Font Awesome**. [Font Awesome](https://fontawesome.com/) is the web's mostg popular icon set and toolkit. 
-
 
 
 ##References
