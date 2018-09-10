@@ -1,5 +1,6 @@
 # quickstart-rest-web-service
-# Spring Overview 
+
+## Spring Overview 
 Spring makes it easy to create Java enterprise applications with the flexibility to create many kinds of architectures depending on an application’s needs. As of Spring Framework 5.0, Spring requires JDK 8+ (Java SE 8+) and provides out-of-the-box support for JDK 9 already.
 
 Spring supports a wide range of application scenarios, for example:
@@ -9,12 +10,12 @@ Spring supports a wide range of application scenarios, for example:
 - Yet others may be standalone applications (such as batch or integration workloads) that do not need a server.
 
 Several initiatives (aka projects) have sprung since its original inception. These notes focus on the foundation, that is the **Spring Framework** which is divided into modules. Applications can choose which modules they need. At the heart are the modules of the core container, including a configuration model and a dependency injection mechanism. Beyond that, the Spring Framework provides foundational support for different application architectures, including messaging, transactional data and persistence, and web. It also includes the Servlet-based Spring MVC web framework and, in parallel, the Spring WebFlux reactive web framework.
-![Spring Framework Runtime](/Users/Michael/ADevelopment/Programming/Udemy/Spring/images/spring_framework_runtime.png)
+![Spring Framework Runtime](images/spring_framework_runtime.png)
 
 
 For more information, see [Spring Framework Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#overview-spring). 
 
-## Design Principles
+### Design Principles
 The following are the guiding principles of the Spring Framework:
 
 1.	**Provide choice at every level**. **Spring lets you defer design decisions as late as possible**. For example, you can switch persistence providers through configuration without changing your code. The same is true for many other infrastructure concerns and integration with third-party APIs.
@@ -28,7 +29,7 @@ The following are the guiding principles of the Spring Framework:
 
 -  It is reccomended to use a tried and true **good IDE** environment. We suggest the following:
 	- [Eclipse](http://wwww.eclipse.org/). Install the Spring IDE plugin as shown at [Spring Tools for Eclipse](https://www.eclipse.org/community/eclipse_newsletter/2018/february/springboot.php). 
-	![Install Spring IDE plugin](/Users/Michael/ADevelopment/Programming/Udemy/Spring/images/spring_ide_plugin.png)
+	![Install Spring IDE plugin](images/spring_ide_plugin.png)
 - **Other**
 	- aaa. 
 	- bbb.  
@@ -201,9 +202,9 @@ Let's analyze the GreetingController class which is deceptively simple but it im
 
 
 -	The class uses Spring 4’s new **@RestController** annotation, which marks the class as a controller allowing every method to <span style="background-color:yellow">return a domain object</span> instead of a view. It’s shorthand for @Controller and @ResponseBody rolled together. In this example, it returns a resource representation class Greeting obiect. 
-<div style="background-color:#c2e7e7"> ![bullhorn](/Users/Michael/ADevelopment/Programming/Udemy/Spring/images/bullhorn.png) A key difference between a traditional MVC controller and the RESTful web service controller above is the way that the HTTP response body is created. Rather than relying on a view technology to perform server-side rendering of the greeting data to HTML, this RESTful web service controller simply populates and returns a Greeting object. The object data will be written directly to the HTTP response as JSON. The Greeting object is converted to JSON thanks to Spring’s HTTP message converter support; you don’t need to do this conversion manually. Because Jackson 2 is on the classpath, Spring’s MappingJackson2HttpMessageConverter is automatically chosen to convert the Greeting instance to JSON.</div>
+<div style="background-color:#c2e7e7"> ![bullhorn](images/bullhorn.png) A key difference between a traditional MVC controller and the RESTful web service controller above is the way that the HTTP response body is created. Rather than relying on a view technology to perform server-side rendering of the greeting data to HTML, this RESTful web service controller simply populates and returns a Greeting object. The object data will be written directly to the HTTP response as JSON. The Greeting object is converted to JSON thanks to Spring’s HTTP message converter support; you don’t need to do this conversion manually. Because Jackson 2 is on the classpath, Spring’s MappingJackson2HttpMessageConverter is automatically chosen to convert the Greeting instance to JSON.</div>
 
-- 	The **@RequestMapping** annotation <span style="background-color:yellow">ensures that HTTP requests to /greeting are mapped to the greeting() method</span>. <div style="background-color:#c2e7e7"> ![bullhorn](/Users/Michael/ADevelopment/Programming/Udemy/Spring/images/bullhorn.png) The above example does not specify GET vs. PUT, POST, and so forth, because @RequestMapping maps all HTTP operations by default. If you want to narrow the mapping to GET only, use @RequestMapping(method=GET) instead.</div>
+- 	The **@RequestMapping** annotation <span style="background-color:yellow">ensures that HTTP requests to /greeting are mapped to the greeting() method</span>. <div style="background-color:#c2e7e7"> ![bullhorn](images/bullhorn.png) The above example does not specify GET vs. PUT, POST, and so forth, because @RequestMapping maps all HTTP operations by default. If you want to narrow the mapping to GET only, use @RequestMapping(method=GET) instead.</div>
 -  The **@RequestParam** annotation binds the value of the query string parameter *name* into the name parameter of the greeting() method. If the *name* parameter is absent in the request, the defaultValue of "World" is used.
 -  Finally, the implementation of the method body creates and returns a new Greeting object with id and content attributes based on the next value from the counter, and formats the given name by using the greeting template.
 
